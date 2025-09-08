@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dermatology Treatments | Dr. Pradeepa Surendran</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        /* Additional specific styles for treatments page */
+        .treatment-category {
+            margin-bottom: 60px;
+        }
+        
+        .treatment-category:last-child {
+            margin-bottom: 0;
+        }
+        
+        .treatment-subcategory {
+            margin: 30px 0;
+        }
+        
+        .treatment-subcategory h3 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--light-gray);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="images/logo.png" alt="Dr. Pradeepa Logo">
+                <!-- <h1>Dr. Pradeepa <span>Surendran</span></h1> -->
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="treatments.html" class="active">Treatments</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="index.html#contact" >Contact</a></li>
+                </ul>
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Banner -->
+    <section class="page-banner">
+        <div class="container">
+            <h1>Our Treatments</h1>
+            <p>Comprehensive dermatological solutions for all your skin and hair concerns</p>
+        </div>
+    </section>
+
+    <!-- Treatments Navigation -->
+    <section class="treatment-nav">
+        <div class="container">
+            <ul>
+                <li><a href="#general" class="active">General Dermatology</a></li>
+                <li><a href="#surgical">Surgical Procedures</a></li>
+                <li><a href="#aesthetic">Aesthetic Treatments</a></li>
+                <li><a href="#hair">Hair Treatments</a></li>
+                <li><a href="#laser">Laser Treatments</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- General Dermatology Section -->
+    <section class="treatment-section" id="general">
+        <div class="container">
+            <h2>General Dermatology</h2>
+            <p class="section-description">Comprehensive care for various skin conditions and concerns</p>
+            
+            <div class="treatment-grid">
+                <div class="treatment-card">
+                    <div class="treatment-image">
+                        <img src="images/treatment-acne.jpg" alt="Acne Treatment">
+                    </div>
+                    <div class="treatment-content">
+                        <h3>Acne Treatment</h3>
+                        <p>Effective management of acne, pimples, blackheads, and whiteheads with customized treatment plans.</p>
+                        <a href="#contact" class="btn-secondary">Book Now</a>
+                    </div>
+                </div>
+                
+                <div class="treatment-card">
+                    <div class="treatment-image">
+                        <img src="images/treatment-eczema.jpg" alt="Eczema & Dermatitis">
+                    </div>
+                    <div class="treatment-content">
+                        <h3>Eczema & Dermatitis</h3>
+                        <p>Treatment for various inflammatory skin conditions including atopic dermatitis and contact dermatitis.</p>
+                        <a href="#contact" class="btn-secondary">Book Now</a>
+                    </div>
+                </div>
+                
+                <div class="treatment-card">
+                    <div class="treatment-image">
+                        <img src="images/treatment-vitiligo.jpg" alt="Vitiligo Treatment">
+                    </div>
+                    <div class="treatment-content">
+                        <h3>Vitiligo Treatment</h3>
+                        <p>Specialized treatments to manage and repigment areas affected by vitiligo.</p>
+                        <a href="#contact" class="btn-secondary">Book Now</a>
+                    </div>
+                </div>
+                
+                <div class="treatment-card">
+                    <div class="treatment-image">
+                        <img src="images/treatment-fungal.jpg" alt="Fungal Infections">
+                    </div>
+                    <div class="treatment-content">
+                        <h3>Fungal Infections</h3>
+                        <p>Diagnosis and treatment of various fungal skin infections including ringworm and athlete's foot.</p>
+                        <a href="#contact" class="btn-secondary">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Surgical Procedures Section -->
+    <section class="treatment-section" id="surgical">
+        <div class="container">
+            <h2>Surgical Procedures</h2>
+            <p class="section-description">Advanced surgical solutions for various skin conditions</p>
+            
+            <div class="treatment-grid">
+                <div class="treatment-card">
+                    <div class="treatment-image">
+                        <img src="images/treatment-tca.jpg" alt="TCA Application">
+                    </div>
+                    <div class="treatment-content">
+                        <h3>TCA Application</h3>
+                        <p>Trichloroacetic acid application for skin rejuvenation, scar treatment, and mole removal.</p>
+                        <a href="#contact" class="btn-secondary">Book Now</a>
+                    </div>
+                </div>
+                
+                <div class="treatment-card">
+                    <div class="treatment-image">
+                        <img src="images/treatment-ils.jpg" alt="Intralesional Injections">
+                    </div>
+                    <div class="treatment-content">
+                        <h3>Intralesional Injections (ILS)</h3>
+                        <p>Targeted injection therapy for keloids, hypertrophic scars, and certain skin conditions.</p>
+                        <a href="#contact" class="btn-secondary">Book Now</a>
+                    </div>
+                </div>
+                
+                <div class="treatment-card">
+                    <div class="treatment-image">
+                        <img src="images/treatment-electrocautery.jpg" alt="Electrocautery">
+                    </div>
+                    <div class="treatment-content">
+                        <h3>Electrocautery</h3>
+                        <p>Precise removal of skin tags, warts, and other benign skin growths using electrical energy.</p>
+                        <a href="#contact" class="btn-secondary">Book Now</a>
+                    </div>
+                </div>
+                
+                <div class="treatment-card">
+                    <div class="treatment-image">
+                        <img src="images/treatment-rf.jpg" alt="Radiofrequency">
+                    </div>
+                    <div class="treatment-content">
+                        <h3>Radiofrequency (RF) Treatment</h3>
+                        <p>Advanced RF technology for skin tightening, scar treatment, and various dermatological procedures.</p>
+                        <a href="#contact" class="btn-secondary">Book Now</a>
+                    </div>
+                </div>
+                
+                <div class="treatment-card">
+                    <div class="treatment-image">
+                        <img src="images/treatment-mole.jpg" alt="Mole Excision">
+                    </div>
+                    <div class="treatment-content">
+                        <h3>Mole Excision</h3>
+                        <p>Safe and precise surgical removal of moles for cosmetic or medical reasons.</p>
+                        <a href="#contact" class="btn-secondary">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Aesthetic Treatments Section -->
+    <section class="treatment-section" id="aesthetic">
+        <div class="container">
+            <h2>Aesthetic Treatments</h2>
+            <p class="section-description">Enhance your natural beauty with our aesthetic procedures</p>
+            
+            <div class="treatment-grid">
+                <div class="treatment-card">
+                    <div class="treatment-image">
+                        <img src="images/treatment-chemical.jpg" alt="Chemical Peels">
+                    </div>
+                    <div class="treatment-content">
+                        <h3>Chemical Peels</h3>
+                        <p>Treatment for pigmentation, tanning, uneven skin tone, acne, and fine lines with various peel formulations.</p>
+                        <a href="#contact" class="btn-secondary">Book Now</a>
+                    </div>
+                </div>
+                
+                <div class="treatment-card">
+                    <div class="treatment-image">
+                        <img src="images/treatment-mnr.jpg" alt="Microdermabrasion">
+                    </div>
+                    <div class="treatment-content">
+                        <h3>Microdermabrasion (MNRF)</h3>
+                        <p>Non-invasive exfoliation treatment to improve skin texture, reduce fine lines, and rejuvenate appearance.</p>
+                        <a href="#contact" class="btn-secondary">Book Now</a>
+                    </div>
+                </div>
+                
+                <div class="treatment-card">
+                    <div class="treatment-image">
+                        <img src="images/treatment-hydrafacial.jpg" alt="Hydrafacial">
+                    </div>
+                    <div class="treatment-content">
+                        <h3>Hydrafacial</h3>
+                        <p>Advanced hydradermabrasion treatment that cleanses, exfoliates, and hydrates the skin simultaneously.</p>
+                        <a href="#contact" class="btn-secondary">Book Now</a>
+                    </div>
+                </div>
+                
+                <div class="treatment-card">
+                    <div class="treatment-image">
+                        <img src="images/treatment-dermaroller.jpg" alt="Derma Roller">
+                    </div>
+                    <div class="treatment-content">
+                        <h3>Derma Roller</h3>
+                        <p>Minimally invasive treatment using micro-needles to stimulate collagen production and improve skin texture.</p>
+                        <a href="#contact" class="btn-secondary">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hair Treatments Section -->
+    <section class="treatment-section" id="hair">
+        <div class="container">
+            <h2>Hair Treatments</h2>
+            <p class="section-description">Effective solutions for hair loss and scalp conditions</p>
+            
+            <div class="treatment-grid">
+                <div class="treatment-card">
+                    <div class="treatment-image">
+                        <img src="images/treatment-prp.jpg" alt="PRP Therapy">
+                    </div>
+                    <div class="treatment-content">
+                        <h3>PRP Therapy</h3>
+                        <p>Platelet-Rich Plasma therapy using your own blood components to stimulate hair growth and strengthen follicles.</p>
+                        <a href="#contact" class="btn-secondary">Book Now</a>
+                    </div>
+                </div>
+                
+                <div class="treatment-card">
+                    <div class="treatment-image">
+                        <img src="images/treatment-hairfall.jpg" alt="Hair Fall Treatment">
+                    </div>
+                    <div class="treatment-content">
+                        <h3>Hair Fall Treatment</h3>
+                        <p>Comprehensive diagnosis and management of various types of hair loss including hormonal and stress-related.</p>
+                        <a href="#contact" class="btn-secondary">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Laser Treatments Section -->
+    <section class="treatment-section" id="laser">
+        <div class="container">
+            <h2>Laser Treatments</h2>
+            <p class="section-description">Advanced laser solutions for various dermatological concerns</p>
+            
+            <div class="treatment-subcategory">
+                <h3>Laser Hair Reduction</h3>
+                <div class="treatment-grid">
+                    <div class="treatment-card">
+                        <div class="treatment-image">
+                            <img src="images/treatment-laser-hair.jpg" alt="Laser Hair Reduction">
+                        </div>
+                        <div class="treatment-content">
+                            <h3>Laser Hair Reduction</h3>
+                            <p>Permanent reduction of unwanted hair from face and body using advanced laser technology. Triple wavelength diode laser ensures painless, safe conversion of terminal hairs to vellus hair.</p>
+                            <a href="#contact" class="btn-secondary">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="treatment-subcategory">
+                <h3>Laser for Skin Conditions</h3>
+                <div class="treatment-grid">
+                    <div class="treatment-card">
+                        <div class="treatment-image">
+                            <img src="images/treatment-keloid.jpg" alt="Keloid/Scar Treatment">
+                        </div>
+                        <div class="treatment-content">
+                            <h3>Keloid & Scar Treatment</h3>
+                            <p>Laser treatment for reducing the appearance of keloids and various types of scars including acne scars.</p>
+                            <a href="#contact" class="btn-secondary">Book Now</a>
+                        </div>
+                    </div>
+                    
+                    <div class="treatment-card">
+                        <div class="treatment-image">
+                            <img src="images/treatment-pigmentation.jpg" alt="Hyperpigmentation Treatment">
+                        </div>
+                        <div class="treatment-content">
+                            <h3>Hyperpigmentation Treatment</h3>
+                            <p>Laser therapy for various pigmentation issues including melasma, sun spots, and post-inflammatory hyperpigmentation.</p>
+                            <a href="#contact" class="btn-secondary">Book Now</a>
+                        </div>
+                    </div>
+                    
+                    <div class="treatment-card">
+                        <div class="treatment-image">
+                            <img src="images/treatment-tattoo.jpg" alt="Tattoo Removal">
+                        </div>
+                        <div class="treatment-content">
+                            <h3>Tattoo Removal</h3>
+                            <p>Laser-assisted removal of unwanted tattoos with advanced Q-switched laser technology.</p>
+                            <a href="#contact" class="btn-secondary">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Gallery Section -->
+    <section class="gallery-section" id="results">
+        <div class="container">
+            <h2>Treatment Results</h2>
+            <p class="section-description">Before and after transformations (with patient consent)</p>
+            
+            <div class="results-grid">
+                <div class="result-item">
+                    <div class="before-after">
+                        <div class="before">
+                            <img src="images/acne-before.jpg" alt="Before Treatment">
+                            <span>Before</span>
+                        </div>
+                        <div class="after">
+                            <img src="images/acne-after.jpg" alt="After Treatment">
+                            <span>After</span>
+                        </div>
+                    </div>
+                    <div class="result-info">
+                        <h3>Acne Treatment</h3>
+                        <p>3 months treatment plan with clinical peels and medication</p>
+                    </div>
+                </div>
+                
+                <div class="result-item">
+                    <div class="before-after">
+                        <div class="before">
+                            <img src="images/hair-before.png" alt="Before Treatment">
+                            <span>Before</span>
+                        </div>
+                        <div class="after">
+                            <img src="images/hair-after.png" alt="After Treatment">
+                            <span>After</span>
+                        </div>
+                    </div>
+                    <div class="result-info">
+                        <h3>Hair Regrowth Therapy</h3>
+                        <p>6 sessions of PRP therapy for androgenetic alopecia</p>
+                    </div>
+                </div>
+                
+                <div class="result-item">
+                    <div class="before-after">
+                        <div class="before">
+                            <img src="images/pigmentation-before.png" alt="Before Treatment">
+                            <span>Before</span>
+                        </div>
+                        <div class="after">
+                            <img src="images/pigmentation-after.png" alt="After Treatment">
+                            <span>After</span>
+                        </div>
+                    </div>
+                    <div class="result-info">
+                        <h3>Pigmentation Treatment</h3>
+                        <p>Combination therapy with peels and topical treatment</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="disclaimer">
+                <p><strong>Note:</strong> Individual results may vary. These images show real patients who have given consent for their photos to be used. Results are not guaranteed and depend on individual conditions and adherence to treatment plans.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Consultation Section -->
+    <section class="consultation-section">
+        <div class="container">
+            <div class="consultation-content">
+                <h2>Not Sure Which Treatment You Need?</h2>
+                <p>Schedule a consultation with Dr. Pradeepa to get personalized treatment recommendations based on your specific condition and goals.</p>
+                <a href="index.html#contact" class="btn">Book Consultation</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container">
+            <h2>Treatment FAQs</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>How many sessions will I need for my treatment?</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>The number of sessions varies depending on the treatment and your individual condition. During your consultation, Dr. Pradeepa will assess your needs and provide a personalized treatment plan with the estimated number of sessions required.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Is there any downtime after treatments?</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Most treatments have minimal to no downtime. Some procedures like chemical peels or laser treatments may require a short recovery period where you might experience temporary redness or sensitivity. Dr. Pradeepa will provide detailed aftercare instructions specific to your treatment.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Are the treatments painful?</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>We use advanced techniques and technologies to minimize discomfort during treatments. Most patients report only mild sensations during procedures. For more sensitive treatments, we can use topical anesthetics to ensure your comfort.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>How long do the results last?</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>The longevity of results depends on the specific treatment and individual factors like skin type, age, and lifestyle. Some treatments provide permanent results (like tattoo removal), while others may require maintenance sessions (like laser hair reduction). Dr. Pradeepa will discuss expected outcomes during your consultation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <div class="logo">
+                        <img src="images/logo.png" alt="Dr. Pradeepa Logo">
+                        <!-- <h3>Dr. Pradeepa <span>Surendran</span></h3> -->
+                    </div>
+                    <p>Expert dermatological care for skin, hair and cosmetic treatments in Pattukkottai and surrounding areas.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="treatments.html">Treatments</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Treatments</h4>
+                    <ul>
+                        <li><a href="treatments.html#general">General Dermatology</a></li>
+                        <li><a href="treatments.html#surgical">Surgical Procedures</a></li>
+                        <li><a href="treatments.html#aesthetic">Aesthetic Treatments</a></li>
+                        <li><a href="treatments.html#hair">Hair Treatments</a></li>
+                        <li><a href="treatments.html#laser">Laser Treatments</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> Pattukkottai, Tamil Nadu</li>
+                        <li><i class="fas fa-phone-alt"></i> <a href="tel:+919788152585">+91 9788152585</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:contact@drpradeepa.com">contact@drpradeepa.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Dr. Pradeepa Surendran. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

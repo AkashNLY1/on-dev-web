@@ -1,0 +1,131 @@
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .container {
+        max-width: 1000px;
+    }
+}
+
+@media (max-width: 992px) {
+    .container {
+        max-width: 800px;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .about-summary .container, 
+    .about-doctor .container,
+    .contact .container {
+        flex-direction: column;
+    }
+    
+    .about-image, .about-content {
+        width: 100%;
+    }
+    
+    .about-image {
+        margin-bottom: 30px;
+    }
+    
+    .mission-cards, .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        max-width: 600px;
+    }
+    
+    nav ul {
+        display: none;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background-color: var(--white-color);
+        flex-direction: column;
+        padding: 20px 0;
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    nav ul.show {
+        display: flex;
+    }
+    
+    nav ul li {
+        margin: 0;
+        text-align: center;
+    }
+    
+    nav ul li a {
+        display: block;
+        padding: 15px;
+    }
+    
+    .mobile-menu {
+        display: block;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+    
+    .hero-btns {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .treatment-nav, .gallery-nav {
+        top: 70px;
+    }
+    
+    .mission-cards, .values-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        max-width: 100%;
+        padding: 0 15px;
+    }
+    
+    .logo h1, .logo h3 {
+        font-size: 1.2rem;
+    }
+    
+    .hero {
+        min-height: 500px;
+    }
+    
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+    
+    .page-banner h1 {
+        font-size: 2rem;
+    }
+    
+    .treatment-grid, .gallery-grid, .results-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .before-after {
+        flex-direction: column;
+        height: auto;
+    }
+    
+    .before, .after {
+        height: 200px;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+}
