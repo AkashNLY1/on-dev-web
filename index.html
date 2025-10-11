@@ -7,6 +7,298 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        /* Additional styles for improved contact section */
+        .contact .container {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 40px;
+            align-items: start;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0px;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .info-item:hover {
+            background: #e9ecef;
+            transform: translateY(-2px);
+        }
+        
+        .info-item i {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            margin-top: 5px;
+            min-width: 20px;
+        }
+        
+        .info-item-content {
+            flex: 1;
+        }
+        
+        .info-item h4 {
+            color: var(--primary-color);
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+        
+        .info-item p {
+            margin: 5px 0;
+            line-height: 1.5;
+        }
+        
+        .clinic-hours {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 5px;
+        }
+        
+        .visiting-clinics {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .clinic-card {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .clinic-card h5 {
+            color: var(--primary-color);
+            margin-bottom: 8px;
+            font-size: 1rem;
+        }
+        
+        .clinic-card p {
+            margin: 3px 0;
+            font-size: 0.9rem;
+        }
+        
+        .clinic-timing {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-top: 5px;
+        }
+        
+        .contact-form {
+            background-color: var(--white-color);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            height: fit-content;
+            position: sticky;
+            top: 100px;
+        }
+        
+        .contact-form h3 {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: var(--dark-color);
+            text-align: center;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid var(--light-gray);
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: #f8f9fa;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(106, 13, 173, 0.2);
+            background: white;
+        }
+        
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .phone-link {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        /* Treatment notification styles */
+        .treatment-selected {
+            background-color: #e8f5e8;
+            border-left: 4px solid var(--success-color);
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+            animation: slideIn 0.5s ease;
+        }
+        
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        /* Fixed Google Maps Location Button Styles */
+        .location-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+            color: white;
+            padding: 10px 18px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-top: 12px;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 8px rgba(106, 13, 173, 0.3);
+            border: 2px solid transparent;
+        }
+        
+        .location-button:hover {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(106, 13, 173, 0.4);
+            color: white;
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .location-button:active {
+            transform: translateY(-1px);
+            box-shadow: 0 3px 8px rgba(106, 13, 173, 0.3);
+        }
+        
+        .location-button i {
+            font-size: 1.1rem;
+            margin: 0;
+            color: white;
+            filter: drop-shadow(0 1px 2px rgba(0,0,0,0.2));
+        }
+        
+        .location-button-text {
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+        
+        @media (max-width: 992px) {
+            .contact .container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .contact-form {
+                position: static;
+                order: -1;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .info-item {
+                padding: 15px;
+            }
+            
+            .clinic-card {
+                padding: 12px;
+            }
+            
+            .contact-form {
+                padding: 25px;
+            }
+            
+            .location-button {
+                padding: 8px 15px;
+                font-size: 0.85rem;
+                margin-top: 10px;
+            }
+            
+            .location-button i {
+                font-size: 1rem;
+            }
+        }
+
+        /* Updated Google Maps Link Styles */
+.map-link-container {
+    margin-top: 3px;
+}
+
+.map-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    padding: 4px 0;
+    /* border-bottom: 1px solid transparent; */
+    
+}
+
+
+.map-link span:hover {
+    color: var(--primary-dark);
+    border-bottom-color: var(--primary-light);
+}
+
+.map-link span {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    color: var(--primary-color);
+}
+
+.map-link i {
+    font-size: 0.8rem;
+    color: var(--primary-color);
+    transition: transform 0.3s ease;
+}
+
+.map-link:hover i {
+    transform: translateX(2px);
+}
+
+/* Remove the old location button styles */
+.location-button {
+    display: none;
+}
+    </style>
 </head>
 <body>
     <!-- Header Section -->
@@ -14,7 +306,6 @@
         <div class="container">
             <div class="logo">
                 <img src="images/logo.png" alt="Dr. Pradeepa's Clinic Logo">
-                <!-- <h1>Dr. Pradeepa <span>Surendran</span></h1> -->
             </div>
             <nav>
                 <ul>
@@ -148,79 +439,146 @@
     </section>
 
     <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <div class="contact-info">
-                <h2>Contact Us</h2>
-                <p>Schedule your consultation today for personalized skin and hair care</p>
-                
-                <div class="info-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <div>
-                        <h4>Main Clinic</h4>
-                        <p>Dr. Pradeepa  Skin Hair Laser Clinic</p>
-                    </div>
-                </div>
-                
-                <div class="info-item">
-                    <i class="fas fa-phone-alt"></i>
-                    <div>
-                        <h4>Phone</h4>
-                        <p><a href="tel:+917200073080">+91 72000 73080</a></p>
-                    </div>
-                </div>
-                
-                <div class="info-item">
-                    <i class="fas fa-clock"></i>
-                    <div>
-                        <h4>Clinic Hours</h4>
-                        <p>Monday to Saturday: 5:00 PM - 7:00 PM</p>
-                        <p>Sunday: Closed</p>
-                    </div>
-                </div>
-                
-                <div class="info-item">
-                    <i class="fas fa-calendar-alt"></i>
-                    <div>
-                        <h4>Visiting Clinics</h4>
-                        <p><strong>Kottai Speciality Hospital</strong>, 18/B, Pillaiyar Koil St,<br>Pattukkottai, Tamil Nadu-614601</p>
-                        <p><strong>Shifa Multi Speciality Hospital</strong></p>
-                        <p><strong>Kannan Medicals </strong>- Karambakkudi</p>
+    <!-- Contact Section -->
+<section class="contact" id="contact">
+    <div class="container">
+        <div class="contact-info">
+            <h2>Contact Us</h2>
+            <p>Schedule your consultation today for personalized skin and hair care</p>
+            
+            <!-- Treatment Selection Notification -->
+            <div id="treatment-notification" style="display: none;" class="treatment-selected">
+                <p><strong>Treatment Selected:</strong> <span id="selected-treatment-name"></span></p>
+            </div>
+            
+            <!-- Main Clinic -->
+            <div class="info-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <div class="info-item-content">
+                    <h4>Main Clinic</h4>
+                    <div class="visiting-clinics">
+                        <!-- Main Clinic Card -->
+                        <div class="clinic-card">
+                            <h5><strong>Dr. Pradeepa's Skin Hair Laser Clinic</strong></h5>
+                            <p>Satchinathan Chettiyar Road, Pattukkottai</p>
+                            <p><em>(Near Rajamani theatre)</em></p>
+                            <p><strong>Phone:</strong> 72000 73080</p>
+                            <span class="clinic-timing">5:00 PM - 7:30 PM</span>
+                            <span class="clinic-timing">Sunday: Closed</span>
+                            <!-- Google Maps Location Link -->
+                            <div class="map-link-container">
+                                <a href="https://www.google.com/maps/place/Dr+Pradeepa's+Skin,+Hair+%26+Laser+Clinic,+18%2FB,+Pillaiyar+Koil+St,+Thangavel+Nagar,+Pattukkottai,+Tamil+Nadu+614601/data=!4m2!3m1!1s0x3b00015d41f7b7a5:0x9bc0f8a0d55a4edd?utm_source=mstt_1&entry=gps&coh=192189&g_ep=CAESBzI1LjM1LjAYACCIJyqZASw5NDI2NzcyNyw5NDI5MjE5NSw5NDI4NDQ5OSw5NDIyMzI5OSw5NDIxNjQxMyw5NDI4MDU3Niw5NDIxMjQ5Niw5NDI4NTA1Miw5NDIwNzM5NCw5NDIwNzUwNiw5NDIwODUwNiw5NDIxNzUyMyw5NDIxODY1Myw5NDIyOTgzOSw5NDI3NTE2OCw0NzA4NDM5Myw5NDIxMzIwMEICSU4%3D&skid=642a67a0-3a28-41d6-967b-243a89ed35d4&g_st=aw" 
+                                   target="_blank" class="map-link">
+                                    <span>View on Google Maps</span>
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
             
-            <div class="contact-form">
-                <h3>Book an Appointment</h3>
-                <form id="appointmentForm">
-                    <div class="form-group">
-                        <input type="text" placeholder="Your Name" required>
+            <!-- Visiting Clinics -->
+            <div class="info-item">
+                <i class="fas fa-calendar-alt"></i>
+                <div class="info-item-content">
+                    <h4>Visiting Clinics</h4>
+                    <div class="visiting-clinics">
+                        <!-- Kottai Speciality Hospital -->
+                        <div class="clinic-card">
+                            <h5>Kottai Speciality Hospital</h5>
+                            <p>18/B, Pillaiyar Koil St, Pattukkottai</p>
+                            <p>Tamil Nadu - 614601</p>
+                            <p><strong>Phone:</strong> 72000 73080</p>
+                            <span class="clinic-timing">11:00 AM - 02:00 PM</span>
+                            <!-- Google Maps Location Link -->
+                            <div class="map-link-container">
+                                <a href="https://www.google.com/maps/place/KOTTAI+HOSPITAL/@10.426822,79.3176184,17z/data=!3m1!4b1!4m6!3m5!1s0x3b00012925e77a49:0xaae7dc1510b48d2e!8m2!3d10.426822!4d79.3176184!16s%2Fg%2F11sg_hhlm3?entry=ttu&g_ep=EgoyMDI1MTAwOC4wIKXMDSoASAFQAw%3D%3D" 
+                                   target="_blank" class="map-link">
+                                    <span>View on Google Maps</span>
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- Shifa Multi Speciality Hospital -->
+                        <div class="clinic-card">
+                            <h5>Shifa Multi Speciality Hospital</h5>
+                            <p>Adirampattinam, Pattukkottai</p>
+                            <p>Tamil Nadu - 614601</p>
+                            <p><strong>Phone:</strong> 72000 73080</p>
+                            <span class="clinic-timing">Thursday: 10:00 AM - 11:00 AM</span>
+                            <!-- Google Maps Location Link -->
+                            <div class="map-link-container">
+                                <a href="https://www.google.co.in/maps/place/Shifa+Hospital/@10.3488071,79.3758343,866m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3b000200c7a78bf5:0x307d0fbc3701c460!8m2!3d10.3488071!4d79.3784092!16s%2Fg%2F1ptxwzkbh?entry=ttu&g_ep=EgoyMDI1MTAwOC4wIKXMDSoASAFQAw%3D%3D" 
+                                   target="_blank" class="map-link">
+                                    <span>View on Google Maps</span>
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- Kannan Medicals -->
+                        <div class="clinic-card">
+                            <h5>Kannan Medicals</h5>
+                            <p>Karambakkudi, Pudukkottai</p>
+                            <p>Tamil Nadu - 622302</p>
+                            <p><strong>Phone:</strong> 72000 73080</p>
+                            <span class="clinic-timing">Wednesday: 10:00 AM - 11:00 AM</span>
+                            <!-- Google Maps Location Link -->
+                            <div class="map-link-container">
+                                <a href="https://www.google.co.in/maps/place/Kannan+Medical+Centre/@10.4562285,79.1371387,866m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3baaa713310de291:0xc6fb3bb9ce7190cb!8m2!3d10.4562285!4d79.1397136!16s%2Fg%2F11krkly40p?entry=ttu&g_ep=EgoyMDI1MTAwOC4wIKXMDSoASAFQAw%3D%3D" 
+                                   target="_blank" class="map-link">
+                                    <span>View on Google Maps</span>
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- Sri Senthoor Medicals -->
+                        <div class="clinic-card">
+                            <h5>Sri Senthoor Medicals</h5>
+                            <p>Srinithi Complex, Main Road, Ooranipuram</p>
+                            <p><strong>Phone:</strong> 89253 82026</p>
+                            <span class="clinic-timing">Wednesday: 11:00 AM - 12:00 PM</span>
+                            <!-- No Google Maps link for this clinic -->
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <input type="tel" placeholder="Phone Number" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" placeholder="Email Address">
-                    </div>
-                    <div class="form-group">
-                        <select required>
-                            <option value="">Select Treatment</option>
-                            <option value="skin">Skin Treatment</option>
-                            <option value="hair">Hair Treatment</option>
-                            <option value="laser">Laser Treatment</option>
-                            <option value="consultation">General Consultation</option>
-                            <option value="nail">Nail Treatment</option>
-                            <option value="others">Others</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <textarea placeholder="Your Message"></textarea>
-                    </div>
-                    <button type="submit" class="btn">Book Now</button>
-                </form>
+                </div>
             </div>
         </div>
-    </section>
+        
+        <div class="contact-form">
+            <h3>Book an Appointment</h3>
+            <form id="appointmentForm">
+                <div class="form-group">
+                    <input type="text" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" placeholder="Phone Number" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Email Address">
+                </div>
+                <div class="form-group">
+                    <select id="treatment-category" required>
+                        <option value="">Select Treatment</option>
+                        <option value="skin">Skin Treatment</option>
+                        <option value="hair">Hair Treatment</option>
+                        <option value="laser">Laser Treatment</option>
+                        <option value="consultation">General Consultation</option>
+                        <option value="nail">Nail Treatment</option>
+                        <option value="others">Others</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <textarea placeholder="Your Message"></textarea>
+                </div>
+                <button type="submit" class="btn">Book Now</button>
+            </form>
+        </div>
+    </div>
+</section>
 
     <!-- FAQ Section -->
     <section class="faq">
@@ -286,7 +644,6 @@
                 <div class="footer-col">
                     <div class="logo">
                         <img src="images/logo.png" alt="Dr. Pradeepa Logo"> 
-                        <!-- <h3>Dr. Pradeepa <span>Surendran</span></h3> -->
                     </div>
                     <p>Expert dermatological care for skin, hair and cosmetic treatments in Pattukkottai and surrounding areas.</p>
                     <div class="social-links">
@@ -331,11 +688,39 @@
             
             <div class="footer-bottom">
                 <p>&copy; 2025 Dr. Pradeepa's Clinic. All Rights Reserved.</p>
-                <!-- <p>Designed with <i class="fas fa-heart"></i> for healthy skin</p> -->
             </div>
         </div>
     </footer>
 
     <script src="js/script.js"></script>
+    <script>
+        // Function to handle URL parameters for treatment selection
+        function handleTreatmentSelection() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const treatment = urlParams.get('treatment');
+            const treatmentName = urlParams.get('treatmentName');
+            
+            if (treatment) {
+                const treatmentSelect = document.getElementById('treatment-category');
+                if (treatmentSelect) {
+                    treatmentSelect.value = treatment;
+                    
+                    // Show notification if treatment name is provided
+                    if (treatmentName) {
+                        const notification = document.getElementById('treatment-notification');
+                        const treatmentNameSpan = document.getElementById('selected-treatment-name');
+                        
+                        if (notification && treatmentNameSpan) {
+                            treatmentNameSpan.textContent = decodeURIComponent(treatmentName);
+                            notification.style.display = 'block';
+                        }
+                    }
+                }
+            }
+        }
+        
+        // Call the function when page loads
+        document.addEventListener('DOMContentLoaded', handleTreatmentSelection);
+    </script>
 </body>
 </html>
