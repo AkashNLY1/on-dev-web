@@ -1,0 +1,47 @@
+{
+  "reviews": [
+    {
+      "name": "Al Basith",
+      "rating": 5,
+      "date": "1 year ago",
+      "review": "I took PRP treatment in this clinic. Doctor was very kind and excellent person. Doctor was very friendly with me. Clinic also very clean and hygiene. I was scared about the PRP treatment but doctor explained everything properly. Wonderful experience, thank you doctor."
+    },
+    {
+      "name": "Kumar J",
+      "rating": 5,
+      "date": "1 year ago",
+      "review": "Doctor explained thoroughly about the problem and its treatment. Though we asked for certain costly procedures, doctor said they were not needed. Shows great ethics and honesty."
+    },
+    {
+      "name": "Muruganandam Konnai",
+      "rating": 5,
+      "date": "2 years ago",
+      "review": "Friendly treatment, doctor fees and medicine rate is very low price. The hospital is very clean and hygienic. I had a skin disease and I was treated in many places including Thanjavur, Pondicherry and I was not cured. But after coming to this hospital I recovered completely within 20 days."
+    },
+    {
+      "name": "Harshitha Reddy",
+      "rating": 5,
+      "date": "3 years ago",
+      "review": "Dr Pradeepa is an amazing dermatologist and my skin issues just vanished. She analyses your skin in detail and recommends only the best and necessary medications. I would strongly recommend her for any skin or hair problems."
+    },
+    {
+      "name": "Mohamed Naveeth",
+      "rating": 5,
+      "date": "1 year ago",
+      "review": "Doctor has very friendly good treatment and gives good results."
+    },
+    {
+      "name": "Anandpreetha123",
+      "rating": 5,
+      "date": "2 years ago",
+      "review": "Best skin doctor in Pattukkottai."
+    },
+    {
+      "name": "Vijaya Ragavan Kalathur",
+      "rating": 5,
+      "date": "2 years ago",
+      "review": "Very comfortable to see and consult here."
+    }
+    
+  ]
+}

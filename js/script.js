@@ -189,3 +189,246 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+
+// ======================
+// Google Reviews Carousel - Enhanced
+// ======================
+// Google Reviews Carousel - Infinite with 3 cards
+// Google Reviews Carousel - Fixed Responsive Version
+class GoogleReviewsCarousel {
+    constructor() {
+        this.container = document.getElementById('reviews-container');
+        this.dotsContainer = document.getElementById('carousel-dots');
+        this.prevBtn = document.querySelector('.prev-btn');
+        this.nextBtn = document.querySelector('.next-btn');
+        
+        this.currentSlide = 0;
+        this.isAnimating = false;
+        this.autoRotateInterval = null;
+        this.cardsPerSlide = 3;
+        this.totalSlides = 0;
+        
+        this.init();
+    }
+    
+    async init() {
+        await this.loadReviews();
+        this.setupEventListeners();
+        this.startAutoRotate();
+        this.updateCardsPerSlide(); // Initial calculation
+    }
+    
+    async loadReviews() {
+        try {
+            const response = await fetch('data/reviews.json');
+            const data = await response.json();
+            this.setupCarousel(data.reviews);
+        } catch (error) {
+            console.error('Error loading reviews:', error);
+            const fallbackReviews = this.getFallbackReviews();
+            this.setupCarousel(fallbackReviews);
+        }
+    }
+    
+    getFallbackReviews() {
+        return [
+            {
+                name: "Priya M.",
+                rating: 5,
+                date: "2024-12-15",
+                review: "Dr. Pradeepa is extremely knowledgeable and caring. She accurately diagnosed my skin condition and the treatment worked wonders.",
+                treatment: "Acne Treatment"
+            },
+            {
+                name: "Ramesh K.",
+                rating: 5,
+                date: "2024-12-10",
+                review: "The PRP therapy for my hair loss has shown remarkable results in just 3 sessions. The clinic is hygienic and staff is very supportive.",
+                treatment: "Hair Treatment"
+            },
+            {
+                name: "Anjali S.",
+                rating: 5,
+                date: "2024-12-05",
+                review: "I had laser hair removal done and it was completely painless. Doctor explained everything clearly and made me feel comfortable throughout.",
+                treatment: "Laser Treatment"
+            },
+            {
+                name: "Suresh R.",
+                rating: 5,
+                date: "2024-11-28",
+                review: "Excellent service and professional approach. My skin issues were resolved quickly with proper guidance and medication.",
+                treatment: "Skin Treatment"
+            },
+            {
+                name: "Deepa K.",
+                rating: 5,
+                date: "2024-11-20",
+                review: "Very satisfied with the treatment. Dr. Pradeepa takes time to understand the problem and provides effective solutions.",
+                treatment: "Cosmetic Treatment"
+            },
+            {
+                name: "Karthik M.",
+                rating: 5,
+                date: "2024-11-15",
+                review: "Professional and caring staff. The clinic maintains high standards of hygiene and the results have been excellent.",
+                treatment: "Skin Treatment"
+            }
+        ];
+    }
+    
+    setupCarousel(reviews) {
+        this.container.innerHTML = '';
+        this.dotsContainer.innerHTML = '';
+        
+        this.reviews = reviews;
+        this.updateCardsPerSlide();
+        
+        // Create review cards
+        this.reviews.forEach((review, index) => {
+            const reviewCard = document.createElement('div');
+            reviewCard.className = 'review-card';
+            reviewCard.innerHTML = this.createReviewCardHTML(review);
+            this.container.appendChild(reviewCard);
+        });
+        
+        this.totalSlides = Math.ceil(this.reviews.length / this.cardsPerSlide);
+        this.createDots();
+        this.showSlide(0);
+    }
+    
+    createReviewCardHTML(review) {
+    return `
+        <div class="review-card-inner">
+            <div class="google-icon-container">
+                <div class="google-icon"></div>
+                <div class="star-rating">
+                    ${this.generateStars(review.rating)}
+                </div>
+            </div>
+            <div class="review-header">
+                <div class="reviewer-info">
+                    <h4>${review.name}</h4>
+                    <div class="review-date">${review.date}</div> <!-- show raw text -->
+                </div>
+            </div>
+            <p class="review-text">"${review.review}"</p>
+        </div>
+    `;
+}
+
+    
+    createDots() {
+        for (let i = 0; i < this.totalSlides; i++) {
+            const dot = document.createElement('span');
+            dot.className = 'carousel-dot';
+            dot.dataset.slide = i;
+            this.dotsContainer.appendChild(dot);
+        }
+    }
+    
+    updateCardsPerSlide() {
+        const width = window.innerWidth;
+        if (width <= 768) {
+            this.cardsPerSlide = 1;
+        } else if (width <= 1024) {
+            this.cardsPerSlide = 2;
+        } else {
+            this.cardsPerSlide = 3;
+        }
+    }
+    
+    showSlide(slideIndex) {
+        if (this.isAnimating) return;
+        
+        this.isAnimating = true;
+        
+        // Ensure slide index is within bounds
+        if (slideIndex < 0) {
+            slideIndex = this.totalSlides - 1;
+        } else if (slideIndex >= this.totalSlides) {
+            slideIndex = 0;
+        }
+        
+        const translateX = -slideIndex * (100 / this.cardsPerSlide);
+        this.container.style.transform = `translateX(${translateX}%)`;
+        
+        // Update active dot
+        const dots = this.dotsContainer.querySelectorAll('.carousel-dot');
+        dots.forEach(dot => dot.classList.remove('active'));
+        if (dots[slideIndex]) {
+            dots[slideIndex].classList.add('active');
+        }
+        
+        this.currentSlide = slideIndex;
+        
+        setTimeout(() => {
+            this.isAnimating = false;
+        }, 500);
+    }
+    
+    nextSlide() {
+        this.showSlide(this.currentSlide + 1);
+    }
+    
+    prevSlide() {
+        this.showSlide(this.currentSlide - 1);
+    }
+    
+    setupEventListeners() {
+        this.prevBtn.addEventListener('click', () => this.prevSlide());
+        this.nextBtn.addEventListener('click', () => this.nextSlide());
+        
+        this.dotsContainer.addEventListener('click', (e) => {
+            if (e.target.classList.contains('carousel-dot')) {
+                const slideIndex = parseInt(e.target.dataset.slide);
+                this.showSlide(slideIndex);
+            }
+        });
+        
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            this.updateCardsPerSlide();
+            this.totalSlides = Math.ceil(this.reviews.length / this.cardsPerSlide);
+            this.showSlide(0);
+        });
+        
+        // Pause auto-rotate on hover
+        this.container.addEventListener('mouseenter', () => {
+            this.stopAutoRotate();
+        });
+        
+        this.container.addEventListener('mouseleave', () => {
+            this.startAutoRotate();
+        });
+    }
+    
+    startAutoRotate() {
+        this.stopAutoRotate();
+        this.autoRotateInterval = setInterval(() => {
+            this.nextSlide();
+        }, 5000);
+    }
+    
+    stopAutoRotate() {
+        if (this.autoRotateInterval) {
+            clearInterval(this.autoRotateInterval);
+            this.autoRotateInterval = null;
+        }
+    }
+    
+    generateStars(rating) {
+        return '★★★★★'.slice(0, rating);
+    }
+    
+    // formatDate(dateString) {
+    //     const options = { year: 'numeric', month: 'short', day: 'numeric' };
+    //     return new Date(dateString).toLocaleDateString('en-US', options);
+    // }
+}
+
+// Initialize when DOM loads
+document.addEventListener('DOMContentLoaded', () => {
+    new GoogleReviewsCarousel();
+});
